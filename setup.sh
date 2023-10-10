@@ -167,7 +167,7 @@ run_ei() {
   sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
   
   # Link izin IP VPS
-  url_izin='https://raw.githubusercontent.com/R2GANTENG/Bijivps/main/izin.txt'
+  url_izin='https://raw.githubusercontent.com/MirzaRaka22/ijin/main/izin.txt'
 
   # Mendapatkan IP VPS saat ini
   ip_vps=$(curl -s ifconfig.me)
@@ -229,7 +229,7 @@ run_file() {
 cd /usr/bin
 rm -fr menu
 rm -fr /usr/sbin/menu
-wget https://raw.githubusercontent.com/R2GANTENG/Bijivps/main/menu.zip
+wget https://raw.githubusercontent.com/MirzaRaka22/V6/main/menu.zip
 unzip menu.zip
 chmod +x menu/*
 mv menu/* /usr/local/sbin
@@ -237,14 +237,14 @@ rm -rf menu
 rm -rf menu.zip
 #######service
 cd /usr/local/bin
-wget https://raw.githubusercontent.com/R2GANTENG/Bijivps/main/ws.zip
+wget https://raw.githubusercontent.com/MirzaRaka22/V6/main/ws.zip
 unzip ws.zip
 rm -fr ws.zip
 chmod +x *
 chmod +x /usr/bin/*
 #####core
 cd /etc/systemd/system
-wget https://raw.githubusercontent.com/R2GANTENG/Bijivps/main/service.zip
+wget https://raw.githubusercontent.com/MirzaRaka22/V6/main/service.zip
 unzip service.zip
 rm -fr service.zip
 systemctl daemon-reload
@@ -257,7 +257,7 @@ systemctl restart quota
 ###slowdns
 mkdir /etc/slowdns
 cd /etc/slowdns
-wget https://raw.githubusercontent.com/R2GANTENG/Bijivps/main/dns.zip
+wget https://raw.githubusercontent.com/MirzaRaka22/V6/main/dns.zip
 unzip dns.zip
 chmod +x *
 ./dnstt-server -gen-key -privkey-file server.key
@@ -283,7 +283,7 @@ organizationalunit=none
 commonname=none
 email=none
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/R2GANTENG/Bijivps/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/MirzaRaka22/V6/main/password"
 chmod +x /etc/pam.d/common-password
 # go to root
 cd
@@ -350,7 +350,7 @@ apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf https://raw.githubusercontent.com/Rerechan02/last/main/nginx.conf
-wget -O /etc/nginx/conf.d/xray.conf https://raw.githubusercontent.com/R2GANTENG/Bijivps/main/xray.conf
+wget -O /etc/nginx/conf.d/xray.conf https://raw.githubusercontent.com/MirzaRaka22/V6/main/xray.conf
 sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
 sed -i "s/xxx/${nsdomain}/g" /etc/systemd/system/client.service
 sed -i "s/xxx/${nsdomain}/g" /etc/systemd/system/server.service
@@ -410,7 +410,7 @@ rm -fr /etc/issue.net
 cat> /etc/issue.net << END
 <br>
 <font color="blue"><b>===============================</br></font><br>
-<font color="red"><b>********  Raden Rizki ********</b></font><br>
+<font color="red"><b>********  IZZ x ZAA *******</b></font><br>
 <font color="blue"><b>===============================</br></font><br>
 END
 /etc/init.d/dropbear restart
@@ -549,7 +549,7 @@ cd .acme.sh
 bash acme.sh --register-account -m rere@rerechan02.com
 bash acme.sh --issue --standalone -d $domain --force
 bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key
-wget -O /etc/xray/config.json https://raw.githubusercontent.com/R2GANTENG/Bijivps/main/config.json
+wget -O /etc/xray/config.json https://raw.githubusercontent.com/MirzaRaka22/V6/main/config.json
 
 #ssl
 cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/funny.pem
